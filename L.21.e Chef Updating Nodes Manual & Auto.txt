@@ -1,0 +1,39 @@
+****Manual Updating Node form client-server****
+
+-login from a node machine
+
+#sudo su
+#chef-client
+
+-Now all files would be updated
+-Go to browser, paste public ip of the node, you will see a webpage
+
+-On Workstation machine
+
+#nano cookbooks/apache-cookbook/recipes/apache-recipe.rb
+
+-Now change some content
+
+#knife cookbook upload apache-cookbook
+
+-Now,again go to node & run chef-client command
+
+
+
+****Auto Updating Node form client-server****
+
+-Login to node1
+
+#nano /etc/crontab
+
+i/p-> ***** root chef-client
+
+-Now, go to workstation
+
+#nano cookbooks/apache-cookbook/recipes/apache-recipe.rb
+
+-Now, modify the content
+
+#knife cookbook upload apache-cookbook
+
+-Now, open browser and chech pulic ip of node1, it will get updated to new content

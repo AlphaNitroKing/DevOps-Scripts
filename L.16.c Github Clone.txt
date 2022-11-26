@@ -1,0 +1,8 @@
+****Github Clone****
+
+-Open github website
+-login and choose existing repository
+-go to your linux machine and run command
+
+#git clone <url of github repo>
+ 

@@ -1,0 +1,68 @@
+-Create Linux Machine in AWS
+-Login as ec2-user
+
+#sudo su
+#yum update -y
+
+-go to www.chef.co on browser
+-go to downloads -> chef-workstation
+-enter name, email, company 
+-copy url
+
+-on linux machine
+
+#wget <url>
+#ls					-will show package with .rpm file
+#yum install <package name>
+#which chef
+#chef --version
+#mkdir cookbooks
+#ls
+#cd cookbooks/
+#chef generate cookbook <book-name>
+#yum install tree -y
+#tree
+#cd <book-name>
+#chef generate recipe <name>
+#tree
+#cd ..
+
+#nano test-cookbook/recipes/test-recipe.rb
+
+file '/myfile' do
+content 'welcome to scitech'
+action :create
+end
+
+#chef spec ruby -c test-cookbook/recipes/test-recipe.rb
+
+O/P -> Syntax OK
+
+#chef-client -zr ''recipe[test-cookbook::test-recipe]
+#ls /
+
+
+
+****Create and Write Second Recipe****
+
+#cd test-cookbook/
+#chef generate recipe recipe2
+#cd ..
+#nano test-cookbook/recipes/recipe2
+
+package 'tree' do
+action :install
+end
+
+file '/myfile2' do
+content 'second project code'
+action :create
+owner 'root' 
+group 'root' 
+end
+
+#chef-client -zr "recipe[test-cookbook::recipe2]"
+#cat /myfile2
+#yum remove tree -y
+#chef-client -zr "recipe[test-cookbook::recipe2]"
+

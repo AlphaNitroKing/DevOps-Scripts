@@ -1,0 +1,11 @@
+****Commands to delete & clean Chef-server****
+
+
+#knife cookbook list					-see list of cookbooks
+#knife cookbook delete <cookbook-name> -y	-delete a cookbook
+#knife node list						-list present nodes
+#knife node delete <node-name> -y			-delete a node
+#knife client-list					-list of clients
+#knife client delete <client-name> -y		-delete a client
+#knife role list						-list of roles
+#knife role delete <role-name> -y			-delete a role

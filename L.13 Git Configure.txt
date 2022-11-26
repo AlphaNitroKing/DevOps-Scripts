@@ -1,0 +1,8 @@
+
+#sudo su
+#yum update -y
+#yum install git -y
+#git --version
+#git config --global user.name "wajahat"
+#git config --global user.email "sw.baseer@gmail.com"
+#git config --list

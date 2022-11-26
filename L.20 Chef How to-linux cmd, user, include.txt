@@ -1,0 +1,72 @@
+****How to execute Linux Commands****
+
+-Login to Machine
+
+#sudo su
+#cd cookbooks
+#ls
+
+#nano test-cookbook/recipes/test-recipes.rb
+
+
+execute "run a script" do
+command <<-EOH
+mkdir /shaikhdir
+touch /shaikhfile
+EOH
+end
+
+#chef-client -zr "recipe[test-cookbook::test-recipes]"
+ls /
+
+
+
+
+****Create a User****
+
+
+#nano test-cookbook/recipes/test-recipe.rb
+
+
+user "shaikh" do
+action :create 
+end
+
+
+#chef-client -zr "recipe[test-cookbook::test-recipe]"
+
+
+#nano test-cookbook/recipes/test-recipe.rb
+
+
+group "SciTech" do
+action :create
+members 'shaikh'
+append true
+end
+
+
+
+#chef-client -zr test-cookbook/recipe/test-recipe.rb
+cat /etc/group
+
+
+
+
+****Include Recipe****
+
+#nano test-cookbook/recipe/default.rb
+
+
+include_recipe "test-cookbook::test-recipe"
+include_recipe "test-cookbook::recipe2"
+
+
+#chef-client -zr "recipe[test-cookbook::default]"
+
+
+
+
+****Include Multiple Recipe from Multiple Cookbooks****
+
+#chef-client -zr [test-cookbook::default],recipe[apache-cookbook::default]"

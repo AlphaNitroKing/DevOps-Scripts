@@ -1,0 +1,42 @@
+****Configure Chef Server****
+
+
+-login amazon linux machine
+
+#ls
+#cd cookbooks/
+#ls
+
+O/P-> apache-cookbook		test-cookbook
+
+-Now, open google chrome->search manage.chef.io->create account
+-Go to chef account->click organisation->starter kit->download stater kit
+-Open the download content->unzip->chef-repo
+-Now download WinSCP->login with ec2 credentials
+-Now drag & drop "chef-repo" folder from windows to linux
+-Now open workstation in AWS again
+
+#ls
+#cd
+#ls
+
+o/p->chef-repo		cookbooks
+
+#cd chef-repo/
+#ls -a
+
+o/p->.chef		cookbooks		roles
+
+#cd .chef/
+#ls
+
+o/p->config.rb		<org.name>.pem
+
+#cat config.rb
+
+o/p->URL
+
+#cd ..
+#knife ssl check
+
+o/p->successfully verified certificate from api

@@ -1,0 +1,14 @@
+****Automate a node****
+
+-create a linux machine(node2)
+
+-In advanced details
+
+	#!/bin/bash
+	sudo su
+	yum update -y
+	echo "***** root chef-client" >> /etc/crontab
+
+-Now, go to workstation and run bootstrap command
+-Now, attach cookbook to node run_list
+-Now check in browser node2 shows webpage

@@ -1,0 +1,29 @@
+****Deploying an Apache Server****
+
+
+#ls
+#chef generate cookbook apache-cookbook
+#ls
+#cd apache-cookbook/
+#chef generate recipe apache-recipe
+#tree
+#cd ..
+#ls
+#nano apache-cookbook/recipes/apache-recipe.rb
+
+package 'httpd' do			-use apache2(httpd) for debian and ubuntu
+action :install
+end
+
+file '/var/www/html/index.html' do
+content 'Welcome to Technical Guftgu'
+action :create
+end
+
+
+service 'httpd' do
+action [:enable, :start]
+end
+
+#chef exec ruby -c apache-cookbook/recipes/apache-recipe.rb
+#chef-client -zr "recipe[apache-cookbook::apache-recipe]"

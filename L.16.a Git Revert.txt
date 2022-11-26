@@ -1,0 +1,9 @@
+#sudo su
+#cd mumbaigit
+#ls
+#git status
+#cat >newfile
+#git add
+#git commit -m "code"
+#git log --online
+#git revert <commit-id>

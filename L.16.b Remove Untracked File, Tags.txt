@@ -1,0 +1,12 @@
+****Remove Untracked file****
+
+#git clean -n		(dry run)
+#git clean -f		(forcefully)
+
+
+****Tag****
+
+#git tag -a <tagname> -m <message>
+#git tag							-to see list of tags
+#git show <tag name>					-to see particular commit content 
+#git tag -d <tag name>				-to delete tag

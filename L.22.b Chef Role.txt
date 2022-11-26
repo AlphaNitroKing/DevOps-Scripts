@@ -1,0 +1,109 @@
+****Create Chef-Role****
+
+
+-Go in chef-repo directory
+
+#ls
+
+o/p-> .chef	roles
+
+#cd roles/
+#ls
+
+o/p-> starter.rb
+
+#nano devops.rb
+
+name "devops"
+description "web server role"
+run_list "recipe[apache-cookbook::apache-recipe]"
+
+#cd ..
+#knife role from file roles/devops.rb				-upload the role
+
+o/p-> updated role devops
+
+#knife role list								-see role list
+
+o/p-> devops
+
+-Now create two instances as node1 and node2 in same AZ as of workstation
+-Now bootstrap the node
+
+#knife bootstrap <private-ip> --ssh-user ec2-user --sudo -i <key>.pem -N node1
+#knife bootstrap <private-ip> --ssh-user ec2-user --sudo -i <key>.pem -N node2
+
+-Now connect to role
+
+#knife node list
+#knife node run_list set node1 "role[devops]"
+#knife node run_list set node2 "role[devops]"
+#knife node show node1
+
+o/p->runlist - role[devops]
+
+#knife cookbook upload apache-cookbook
+
+-Now, check public-ip of any node in browser
+
+#cat cookbooks/apache-cookbook/recipes/recipe1.rb
+#nano roles/devops.rb
+
+name "devops"
+description "web server role"
+run_list "recipe[apache-cookbook:: recipe1]
+
+#knife role form file roles/devops.rb
+
+-Now, take access of any node via CLI and check
+-Now again go to workstation
+
+#nano roles/devops.rb
+
+name "devops"
+description "web server role"
+run_list "recipe[apache-cookbook]"
+
+
+#knife role form file roles/devops.rb
+#knife cookbook upload apache-cookbook
+
+
+
+
+****Role for adding from two cookbook****
+
+
+#nano roles devops.rb
+
+name "devops"
+description "web server role"
+run_list "recipe[apache-cookbook]","recipe[test-cookbook]"
+
+-Now upload this role to server
+
+#knife role from file roles/devops.rb
+
+o/p-> updated role devops
+
+#knife cookbook upload test-cookbook
+
+
+
+****Installing Multiple Packages Using Role****
+
+
+
+#nano cookbooks/test-cookbook/recipes/test-recipe.rb
+
+%w(httpd mariadb-server unzip git vim).each do |p|
+package p do
+action :install
+end 
+end
+
+#knife cookbook upload test-cookbook
+
+-Now go inside any node and check the packages are installed or not.
+
+

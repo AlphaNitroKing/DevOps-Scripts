@@ -1,0 +1,29 @@
+#sudo su
+#ohai
+#ohai ipaddress
+#ohai memory/total
+#ohai cpu/0/mhz
+#ls
+#cd cookbooks/
+#cd apache-cookbook/
+#tree
+#chef generate recipe recipe3
+#cd
+#nano apache-cookbook/recipes/recipe3.rb
+
+
+file '/basicinfo do
+content "This is to get attributes
+HOSTNAME: #{node['hostname']}
+IPADDRESS: #{node['ipaddress']}
+CPU: #{node['cpu']['0']['mhz']}
+MEMORY: #{node['memory']['total']}"
+owner 'root'
+group 'root'
+action :create
+end
+
+
+#chef-client -zr "recipe[apache-cookbook::recipe3]"
+#ls /
+#cat /basicinfo

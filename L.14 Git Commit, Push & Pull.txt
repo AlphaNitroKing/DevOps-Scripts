@@ -1,0 +1,42 @@
+
+****Commit and Push****
+--------------------------------------------
+
+login into ec2 mumbai
+create one directory and go inside it
+
+
+#git init
+#touch myfile (put some data)
+#git status
+#git add .
+#git commit -m "1st commit from mumbai"
+#git status
+#git log
+#git show <commit-id>
+#git remote add origin <centralgiturl>
+#git push -u origin master 
+(enter username & password)
+---------------------------------------------
+
+
+****Pull****
+---------------------------------------------
+
+now go to singapore ec2 instance
+create one directory and go inside it
+
+
+#git init 
+#git remote add origin <github repo url>
+#git pull -u origin master 
+#git log git show <commit-id>
+
+now add some code in the file
+
+#git status 
+#git add
+#git commit -m "Singapore update 1"
+#git status 
+#git log
+#git push origin master

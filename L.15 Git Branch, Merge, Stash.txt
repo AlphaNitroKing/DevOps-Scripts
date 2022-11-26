@@ -1,0 +1,36 @@
+****Create Branch****
+
+#git branch					->To see list of available branches
+#git branch <branch name>			->Create a new branch
+#git checkout <name of branch>		->To switch branch
+#git log --oneline				->To see commited files
+#git branch -d <branch name>
+		OR					->Delete a branch
+#git branch -D <branch name>
+
+--------------------------------------
+
+****Merge Branch****
+
+#git merge <branch name>		->Merge Branches
+#git log					->Verify the merge
+#git push origin master		->Push to Central Repo
+
+--------------------------------------
+
+****Stashing****
+
+#git stash					->Stash an item
+#git stash list				->Stashed item list
+#git stash apply stash@{number}	->Apply stashed item
+#git stash clear				->Clear commited life 
+
+--------------------------------------
+
+****Git Reset****
+
+#git reset <filename>			->Remove from staging area
+#git reset .
+#git reset --hard			->remove from workspace and staging area
+
+

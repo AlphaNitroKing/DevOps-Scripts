@@ -1,0 +1,9 @@
+****Cookbook Commands****
+
+chefignore				-ignore 
+kitchen.yml			-for testing cookbook
+metadata.rb			-name,version,author, etc of cookbook
+readme.md				-information about usage of cookbook
+recipe				-where you write code
+spec					-for unit test
+test					-for integration test

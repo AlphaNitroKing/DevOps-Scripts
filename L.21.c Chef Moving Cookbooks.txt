@@ -1,0 +1,23 @@
+ ****Move Local Cookbook to Chef-server Cookbook****
+
+-On chef-repo
+
+#ls
+
+o/p->cookbooks roles
+
+#cd ..
+#ls
+
+o/p->cookbooks
+
+#mv cookbooks/test-cookbooks chef-repo/cookbooks
+#mv cookbooks/apache-cookbooks chef-repo/cookbooks
+#rm -rf cookbooks/
+#ls
+
+o/p->cookbooks
+
+#ls cookbooks/
+
+o/p->apache-cookbook		test-cookbook

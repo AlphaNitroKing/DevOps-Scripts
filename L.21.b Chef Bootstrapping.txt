@@ -11,9 +11,9 @@
 	yum update -y
 
 -Now go to chef-workstation
-
+-in chef-repo
 #knife bootstrap <private-ip> --ssh-user ec2-user --sudo -i node-key.pem -N node1
 
-{paster node-key.pem in chef-repo folder}
+{paste node-key.pem in chef-repo folder}
 
 #knife node list				->to see bootstrapped node

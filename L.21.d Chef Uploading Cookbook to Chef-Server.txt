@@ -1,8 +1,8 @@
 ****Uploading Cookbooks into Chef-server****
 
+-In chef-repo
+
 #knife cookbook upload apache-cookbook
-
-
 
 -Now, to check, whether cookbook is uploaded or not
 
@@ -10,11 +10,9 @@
 
 o/p->apache-cookbook
 
-
-
 -Now we will attach the recipe which we would like to run on node 
 
-#knife node run_list set <node-name> "recipe
-#knife node show node1 "recipe[apache-cookbook::apache-recipe]"
+#knife node run_list set <node-name> "recipe[apache-cookbook::apache-recipe]"
+#knife node show node1 
 
 o/p->runlist:- recipe[apache-cookbook::apache-recipe]
